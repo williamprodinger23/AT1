@@ -48,19 +48,21 @@ document.addEventListener("DOMContentLoaded", function() {
     btn.addEventListener("click", function() {
         const answerElement = content.querySelector('.answer');
         if (btn.textContent === "Submit Answer") {
-            btn.textContent = "Next Question";
             var selected = content.querySelector("input[name='rad']:checked");
-            var correct = selected.getAttribute("data-answer")
-            if (correct == 'true'){
-                const pardiv = content.querySelector("#" + selected.parentElement.id);
-                pardiv.style.color = "green";
-                score ++;
-            } else {
-                const pardiv = content.querySelector("#" + selected.parentElement.id);
-                pardiv.style.color = "red";
-                const correctdiv = content.querySelector("#rad" + corranswer)
-                correctdiv.style.color = "green";
-                answerElement.style.display = "block";
+            if (selected != null){
+                btn.textContent = "Next Question";
+                var correct = selected.getAttribute("data-answer")
+                if (correct == 'true'){
+                    const pardiv = content.querySelector("#" + selected.parentElement.id);
+                    pardiv.style.color = "green";
+                    score ++;
+                } else {
+                    const pardiv = content.querySelector("#" + selected.parentElement.id);
+                    pardiv.style.color = "red";
+                    const correctdiv = content.querySelector("#rad" + corranswer)
+                    correctdiv.style.color = "green";
+                    answerElement.style.display = "block";
+                }
             }
         } else {
             currentSelected = 0;

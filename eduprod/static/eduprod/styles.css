@@ -1,10 +1,47 @@
-body { font-family: Arial, sans-serif; padding: 20px; }
-.question, .answer { margin: 20px}
-#revealBtn { margin: 20px; font-size: 16px; cursor: pointer; }
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 0px; 
+    margin:0px;
+    background-color: #444;
+    color: white;
+}
+.question, .answer { 
+    margin: 20px
+}
+#revealBtn { 
+    margin: 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+ }
 
 .option {
     margin-left: 50px;
     max-width: 100%;
 }
 
+#bar {
+    padding-top: 0px;
+    background-color: black;
+    box-shadow: 0px 5px rgba(0,0,0,0.5);
+}
 
+#bar-list{
+    color: white;
+    display: inline-flex;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+#bar-score {
+    margin-left: 80vw;
+    position: absolute;
+    color: gold;
+}
+
+#revealBtn{
+    background-color: #444;
+    color: white;
+    border-color: white;
+    border-radius: 2px;
+    box-shadow: 5px 5px rgba(0,0,0,0.5);
+}

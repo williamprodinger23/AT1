@@ -7,6 +7,12 @@
     <script src="{% static 'eduprod/scripts.js' %}" defer></script>
 </head>
 <body>
+    <div id = "bar">
+        <ul id = "bar-list">
+            <li class = "bar-title" id = "bar-title">QUIZ</li>
+            <li id = "bar-score"></li>
+        </ul>
+    </div>
     {% block body %}
     {% endblock %}
 </body>

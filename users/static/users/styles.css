@@ -1,55 +1,100 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 body { 
     font-family: Arial, sans-serif; 
     padding: 0px; 
 }
 
-.question{ 
-    margin: 20px; 
-    font-size: 20px; 
-}
-
-#revealBtn { 
-    margin: 20px;
-    margin-top: 0px; 
-    padding-top: 0px;
-    font-size: 16px; 
-    cursor: pointer; 
-}
-
-.form-row {
-    width: 400px;
-    display: flex;
-    margin-bottom: 10px; /* Space between rows */
-}
-.form-row label {
-    flex-basis: 50%; /* Assigns 50% of the container's width to the label */
-    padding-right: 10px; /* Space between the label and the select */
-    text-align: right;
-}
-.form-row select {
-    flex-basis: 50%; /* Assigns 50% of the container's width to the select */
-}
-
-p {
-    margin: 0px; 
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.top-bar{
     padding: 10px;
-}
-.logo img {
-    height: auto; /* Keep image aspect ratio */
-    width: auto; /* You can set a max-width here if needed */
-}
-.user-info {
-    display: flex;
-    align-items: center;
+    color: white;
+    background-color: black;
 }
 
-.answer {
+.top-bar ul{
+    display: inline-flex;
+    list-style: none;
+}
+
+#usernametag{
+    margin-left: 80vw;
+    margin-right: 10px;
+}
+
+#table {
+    border-collapse: collapse;
+}
+
+#img {
+    height: 50vw;
+    width: 60vw;
+}
+
+#login-div {
     margin: 0px;
     padding: 0px;
+    width: 40vw;
+    height: 50vw
+}
+
+#form-div {
+    text-align: center;
+    width: 50vh;
+    height: 50%;
+    position: absolute;
+    top: 25vh;
+    margin-left: 15vh;
+}
+
+#user-form{
+    text-align: center;
+}
+
+.input-list {
+    margin-bottom: 10px;
+    align-items: center;
+    display: inline-flex;
+    width: 20vw;
+    height: 5vh;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+}
+
+#input-img img{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 40%;
+    height: 40%;
+}
+
+.input{
+    width: 70%;
+    height: 80%;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.input input{
+    font-size: large;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+}
+
+#user_button input {
+    font-size: x-large;
+    width: 80%;
+    height: 4vh;
+    border-radius: 50px;
+    background: #66ccff;
+    border-style: none;
+}
+
+#user_button input:hover {
+    background: #3399ff;
+    transition: 200ms;
 }

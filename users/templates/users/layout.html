@@ -2,30 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Q&A</title>
+    <title>Login</title>
     <link href="{% static 'users/styles.css' %}" rel="stylesheet">
+    <link rel = "shortcut icon" href = "{% static 'users/user_icon.png' %}" type = "image/x_icon">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'users/logo.gif' %}" alt="Logo">
-        </div>
-        <div class="user-info">
-            <span>{{ user.username }}</span>
-            <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
-                {% csrf_token %}
-                <button type="submit">Log out</button>
-            </form>
-        </div>
-    </div>   
-    {% if messages %}
-        <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-    {% block body %}
-    {% endblock %}
+    <table id = "table">
+        <tc><td>
+            <img src="{% static 'users/web_login.png' %}" alt="web_login" id = "img">
+        </tc></td>
+        <tc><td>
+            <div class="user-info">
+                <span>{{ user.username }}</span>
+            </div>
+        </tc></td>
+        <tc><td>
+            <div id = "login-div">
+                <div id = "form-div">
+                    <h1 style = "margin-bottom: 10px;">Sign In</h1>
+                    {% block body %}
+                    {% endblock %}
+                    <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
+                        {% if user.username != '' %}
+                            {% csrf_token %}
+                            <button type="submit">Log out</button>
+                        {% endif %}
+                    </form>
+                    {% if messages %}
+                        <ul class="messages" style = "list-style-type: none; color:red; margin-top: 10px;">
+                        {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </tc></td>
+    </table>
 </body>
 </html>

@@ -1,9 +1,19 @@
 {% extends "users/layout.html" %}
 {% block body %}
-<form action="{% url 'users:login' %}" method="post">
+{% load static %}
+{% if user.username == '' %}
+<form action="{% url 'users:login' %}" method="post" id = "user-form">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit" value="Login">
+    <ul class = "input-list" style = "list-style-type: none;">
+        <li id = "input-img"><img src="{% static 'users/user_icon.png' %}" alt="user_icon" id = "img"></li>
+        <li class = "input"><input type="text" name="username" placeholder="Username"></li>
+    </ul>
+    <ul class = "input-list" style = "list-style-type: none;">
+        <li id = "input-img"><img src="{% static 'users/key_icon.png' %}" alt="key_icon" id = "img"></li>
+        <li class = "input"><input type="password" name="password" placeholder="Password"></li>
+    </ul>
+    <div style = "margin-top: 30px; margin-bottom: 10px;" id = "user_button"><input type="submit" value="Login"></div>
+    <div id = "user_button"><p>Dont Have An Account?: <a href = "https://google.com">Join</a></p></div>
 </form>
+{% endif %}
 {% endblock %}

@@ -13,7 +13,7 @@
         <li class = "input"><input type="password" name="password" placeholder="Password"></li>
     </ul>
     <div style = "margin-top: 30px; margin-bottom: 10px;" id = "user_button"><input type="submit" value="Login"></div>
-    <div id = "user_button"><p>Dont Have An Account?: <a href = "https://google.com">Join</a></p></div>
+    <div id = "user_button"><p>Dont Have An Account?: <a href = "{% url 'users:signup' %}">Join</a></p></div>
 </form>
 {% endif %}
 {% endblock %}

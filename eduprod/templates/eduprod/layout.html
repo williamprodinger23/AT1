@@ -9,10 +9,25 @@
 </head>
 <body>
     <div id = "bar">
-        <ul id = "bar-list">
-            <li class = "bar-title" id = "bar-title">QUIZ</li>
-            <li id = "bar-score"></li>
-        </ul>
+        <table id = "t-table">
+            <tr id = "top-bar-tr">
+                <th>
+                    <div id = "left-div">
+                        <p id = "bar-title">QUIZ</p>
+                        <p id = "bar-score"></p>
+                    </div>
+                </th>
+                <th>
+                    <div id = "right-div">
+                        <p>{{user.username}}</p>
+                        <form action="{% url 'users:logout' %}" method="post" id = "logout-form">
+                            {% csrf_token %}
+                            <button type="submit">Log out</button>
+                        </form>
+                    </div>
+                </th>
+            </tr>
+        </table>
     </div>
     {% block body %}
     {% endblock %}

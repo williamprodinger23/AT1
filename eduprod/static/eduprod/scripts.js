@@ -36,10 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
             content.innerHTML = content.innerHTML + `<p class = "answer">The Correct Answer Is: ${corranswertext}</p>`
             content.querySelector(".answer").style.display = "none";
             btn.textContent = "Submit Answer";
-            const title_text = document.querySelector(".bar-title")
+            const title_text = document.querySelector("#bar-title")
             title_text.innerText = `QUIZ:   ${currentQuestionIndex + 1} / ${questions.length}`
         } else {
             content.innerHTML = `No more questions. Your Final Score Was ${score}, Do You Want To Try Again`;
+            score = 0;
         }
     }
 

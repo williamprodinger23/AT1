@@ -20,6 +20,12 @@
                 <th>
                     <div id = "right-div">
                         <p>{{user.username}}</p>
+                        {% if user.is_superuser %}
+                            <form action="{% url 'users:data_change' %}" method="post" id = "logout-form">
+                                {% csrf_token %}
+                                <button type="submit">Edit Questions</button>
+                            </form>
+                        {% endif %}
                         <form action="{% url 'users:logout' %}" method="post" id = "logout-form">
                             {% csrf_token %}
                             <button type="submit">Log out</button>

@@ -1,17 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>SignUp</title>
-    </head>
-    <body>
-        <h1>
-            Signup
-        </h1>
-        <form action = "{% url 'users:signup_run' %}">
-            <input name = "username" type = "text" placeholder="Username">
-            <input name = "password" type = "password" placeholder="Password">
-            <input name = "email" type = "email" placeholder="Email">
-            <button type = "submit">Sign Up</button>
-        </form>
-    </body>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link href="{% static 'users/styles.css' %}" rel="stylesheet">
+    <link rel = "shortcut icon" href = "{% static 'users/user_icon.png' %}" type = "image/x_icon">
+</head>
+<body>
+    <table id = "table">
+        <tc><td>
+            <img src="{% static 'users/web_login_new.png' %}" alt="web_login" id = "img">
+        </tc></td>
+        <tc><td>
+            <div id = "login-div">
+                <div id = "form-div">
+                    <h1 style = "margin-bottom: 10px;">Sign Up</h1>
+                    <form action="{% url 'users:signup_run' %}" method="post" id = "user-form">
+                        {% csrf_token %}
+                        <ul class = "input-list" style = "list-style-type: none;">
+                            <li id = "input-img"><img src="{% static 'users/user_icon.png' %}" alt="user_icon" id = "img"></li>
+                            <li class = "input"><input name = "username" type = "text" placeholder="Username" required></li>
+                        </ul>
+                        <ul class = "input-list" style = "list-style-type: none;">
+                            <li id = "input-img"><img src="{% static 'users/key_icon.png' %}" alt="key_icon" id = "img"></li>
+                            <li class = "input"><input name = "password" type = "password" placeholder="Password" required></li>
+                        </ul>
+                        <div style = "margin-top: 30px; margin-bottom: 10px;" id = "user_button"><input type="submit" value="Sign Up"></div>
+                        <div id = "user_button"><p>Already Have An Account?: <a href = "{% url 'users:login' %}">Sign In</a></p></div>
+                    </form>
+                </div>
+            </div>
+        </tc></td>
+    </table>
+</body>
 </html>

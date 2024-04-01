@@ -32,11 +32,16 @@ def signup_view(request):
     return render(request, "users/signup.html")
 
 def signup_run(request):
-    if request.method == "GET":
-        username = request.GET["username"]
-        password = request.GET["password"]
-        email = request.GET["email"]
-        user = User.objects.create_user(username, email, password)
+    if request.method == "POST":
+        if request.POST["username"]:
+            username = request.POST["username"]
+        if request.POST["password"]:
+            password = request.POST["password"]
+        #email = request.POST["email"]
+        user = User.objects.create_user(username, '', password)
         user.save()
     return HttpResponseRedirect(reverse("eduprod:index"))
+    
+def data_change(request):
+    return render(request, "admin")
 

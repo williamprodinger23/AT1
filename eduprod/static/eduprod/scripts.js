@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 dir = "answer_" + i;
                 selectedquestion = questions[currentQuestionIndex];
                 selectedanswers = selectedquestion.fields[dir];
-                corranswer = questions[currentQuestionIndex].fields.correct_Answer;
+                corranswer = parseInt(questions[currentQuestionIndex].fields.correct_Answer);
                 var correctans = false;
                 if (selectedanswers !== null){
                     if (corranswer === i){
@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const title_text = document.querySelector("#bar-title")
             title_text.innerText = `QUIZ:   ${currentQuestionIndex + 1} / ${questions.length}`
         } else {
-            content.innerHTML = `No more questions. Your Final Score Was ${score}, Do You Want To Try Again`;
+            content.innerHTML = `No more questions. Your Final Score Was ${score}, Do You Want To Try Again?`;
+            btn.textContent = "Try Again"
             score = 0;
         }
     }
@@ -64,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     correctdiv.style.color = "green";
                     answerElement.style.display = "block";
                 }
+            } else {
+                window.alert("An Answer Needs To Be Slected To Submit!")
             }
         } else {
             currentSelected = 0;

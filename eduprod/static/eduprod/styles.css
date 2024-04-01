@@ -2,20 +2,35 @@ body {
     font-family: Arial, sans-serif; 
     padding: 0px; 
     margin:0px;
-    background-color: #444;
+    background-color: #ddd;
     color: white;
 }
 .question, .answer { 
-    margin: 20px
+    margin: 20px;
 }
+
+#content-box{
+    font-size: x-large;
+    margin-top: 30px;
+    display: grid;
+    align-items: center;
+    color: black;
+    background-color: white;
+    width: 30vw;
+    margin-left: 35vw;
+    text-align: center;
+    height: 50vh;
+    border-radius: 10px;
+}
+
 #revealBtn { 
     margin: 20px; 
     font-size: 16px; 
     cursor: pointer;
+    height: 50px;
  }
 
 .option {
-    margin-left: 50px;
     max-width: 100%;
 }
 
@@ -30,11 +45,20 @@ body {
 }
 
 #revealBtn{
-    background-color: #444;
+    background: #66ccff;
     color: white;
     border-color: white;
-    border-radius: 2px;
+    border-radius: 15px;
     box-shadow: 5px 5px rgba(0,0,0,0.5);
+    align-self: center;
+    margin-left: 10vw;
+    width: 10vw;
+}
+
+#revealBtn:hover{
+    background: #3399ff;
+    transition: 200ms;
+    box-shadow: none;
 }
 
 #left-div{
@@ -55,15 +79,13 @@ body {
 }
 
 #logout-form{
-    vertical-align: middle;
     margin-right: 20px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 #logout-form button{
-    margin-top: 15%;
+    margin-top: 10px;
     height: 60%;
-    vertical-align: middle;
     color: white;
     border: 0px;
     border-bottom: 0px solid #444;

@@ -5,5 +5,6 @@ urlpatterns = [
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("signup", views.signup_view, name="signup"),
-    path("signup_run", views.signup_run, name="signup_run")
+    path("signup_run", views.signup_run, name="signup_run"),
+    path("../admin/eduprod/question/", views.data_change, name="data_change"),
 ]

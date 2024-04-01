@@ -2,6 +2,7 @@
 {% block body %}
 {% load static %}
 {% if user.username == '' %}
+<h1 style = "margin-bottom: 10px;">Sign In</h1>
 <form action="{% url 'users:login' %}" method="post" id = "user-form">
     {% csrf_token %}
     <ul class = "input-list" style = "list-style-type: none;">

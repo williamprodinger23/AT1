@@ -19,15 +19,14 @@
         <tc><td>
             <div id = "login-div">
                 <div id = "form-div">
-                    <h1 style = "margin-bottom: 10px;">Sign In</h1>
                     {% block body %}
                     {% endblock %}
+                    {% if user.username != '' %}
                     <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
-                        {% if user.username != '' %}
-                            {% csrf_token %}
-                            <button type="submit">Log out</button>
-                        {% endif %}
+                        {% csrf_token %}
+                        <button type="submit">Log out</button>
                     </form>
+                    {% endif %}
                     {% if messages %}
                         <ul class="messages" style = "list-style-type: none; color:red; margin-top: 10px;">
                         {% for message in messages %}

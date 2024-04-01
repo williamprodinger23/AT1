@@ -37,8 +37,7 @@ def signup_run(request):
             username = request.POST["username"]
         if request.POST["password"]:
             password = request.POST["password"]
-        #email = request.POST["email"]
-        user = User.objects.create_user(username, '', password)
+        user = User.objects.create_user(username, '', password) #Create User With Submitted Username And Password
         user.save()
     return HttpResponseRedirect(reverse("eduprod:index"))
     

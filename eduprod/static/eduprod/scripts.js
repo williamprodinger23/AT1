@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Create Variables
     let currentQuestionIndex = 0;
-    const questions = JSON.parse(document.getElementById('content').getAttribute('data-questions'));
+    //const questions = JSON.parse(document.getElementById('content').getAttribute('data-questions'));
     const content = document.getElementById('content');
+    const dataQuestions = content.getAttribute('data-questions')
+    const questions = JSON.parse(dataQuestions);
     const btn = document.getElementById('revealBtn');
     var corranswer = questions[currentQuestionIndex].fields.correct_Answer;
     var score = 0;
